@@ -1,0 +1,2 @@
+If you are unable to view the README.md file properly (you can use a markdown preview plugin on vscode), 
+visit https://github.com/NatRetsel/SeleniumAssignment-Lester to see the displayed content properly.
