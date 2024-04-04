@@ -1,17 +1,18 @@
 # Selenium Pytest Assignment - Lester
 Project files for the assignment.
 
-### Objectives
+## Objectives
 Visit the website: https://formy-project.herokuapp.com/form
 
 Write test cases for all available features in the website using Selenium with Pytest.
 
-### To run the code
+## To run the code
 Be sure you have installed Python and have your favourite code editor installed. I'll be using VS code.
 
 With a fresh instance of VS code or other editors supporting Python, open / drag the folder `PythonSeleniumAssignment - Lester` into the workspace. You might want to ensure you have no other workspace / folders opened before opening it.
 
-Your workspace may look similar to this:
+Your workspace may look similar to this: <br/>
+
 <img src="SeleniumPytestAssignment - Lester/misc/vscodeworkspace.png" width="30%" height="30%">
 
 Create a local Python version environment in the workspace (If you already know how then skip this after doing it):
@@ -19,13 +20,17 @@ Create a local Python version environment in the workspace (If you already know 
 * Open any `.py` file in the project
 * On your bottom right corner (VScode)
 <img src ="SeleniumPytestAssignment - Lester/misc/bottomrightvscode2.png">
+
 * Click on the version number / "select an interpreter" if yours reflects that and you should see
 <img src="SeleniumPytestAssignment - Lester/misc/toppanelvenvvscode2.png">
+
 * Click on "Create Virtual Environment"
 * Select `Venv`
 <img src="SeleniumPytestAssignment - Lester/misc/vscodevenv3.png">
+
 * Choose an installation, you can choose the one marked Global
 <img src="SeleniumPytestAssignment - Lester/misc/vscodechoosepyinst.png">
+
 * You can choose to select the `requirements.txt` to install the dependencies used in this project. If you chose this you can skip the installing dependencies step below. Otherwise click OK.
 <img src="SeleniumPytestAssignment - Lester/misc/vscodedependencies.png">
 
@@ -42,14 +47,14 @@ if it doesn't reflect `".venv": venv` click on it and select:
 Also make sure `(.venv)` appears in your terminal. You may have to kill your existing terminal by clicking on the bin and open a new one. If it doesn't appear give it awhile to reflect before killing it again and opening a new terminal.
 <img src="SeleniumPytestAssignment - Lester/misc/vscodevenvterminal.png">
 
-#### Installing dependencies
+### Installing dependencies
 
 If you didn't select the `requirements.txt` file during the setup of the virtual environment, install the dependencies listed in `requirements.txt` by running:
 
 `pip3 install -r requirements.txt` or `pip install -r requirements.txt`
 
 
-#### Running the tests
+### Running the tests
 To run the entire test framework (defaults to Chrome browser):
 
 `pytest tests/ --html=reports/report.html --self-contained-html`
@@ -74,7 +79,7 @@ You may view the detailed test report and logs in  `/reports/report.html` and `/
 
 You may also view the summary report I prepared in `Summary Report - Lester.pdf`
 
-### Project Structure
+## Project Structure
 **Local Packages**:
 * `page_objects` - class file containing locators and getters for each locator in the form page.
 * `test_data` - sets of test data 
@@ -93,7 +98,7 @@ The following image illustrates how the packages interact during the test proces
 
 I've structured in this manner so that this project can be used as a framework scaling into larger test cases involving multiple pages (e.g. company website). New pages can be added as a new page object in `page_objects`. Likewise, new test cases on the new pages can be named and grouped accordingly in the `tests` folder. Abstracting away the getting of WebElements allows better focus on test cases in `test/`.
 
-### Test cases
+## Test cases
 Understandably being a dummy test website, I've made various assumptions on the fields.
 * The form is used to collect personal particulars of the user.
 * The date field is assumed to be the user's date of birth.
@@ -105,14 +110,14 @@ Understandably being a dummy test website, I've made various assumptions on the 
 
 Based on these assumptions, I've grouped the test cases into **positive** and **negative** test cases.
 
-#### Positive test case
+### Positive test case
 This assumes the user fills the fields in the form correctly in one go without violating the above assumptions. Test data will reflect accordingly. 
 
 Individual tests on respective WebElements will check that the value captured by the fields reflects what is specified in the test data.
 
 The end to end testing will check that the keyword `"success"` appears in the alert message.
 
-#### Negative test case
+### Negative test case
 This assumes the user fills the fields in the form with either erroneous data or leaves the field empty. The test data will reflect accordingly.
 
 Individual tests on respective WebElements will check for:
@@ -122,12 +127,12 @@ Individual tests on respective WebElements will check for:
 
 End to end testing will check that `"success"` should not appear in the alert after submission with errorneous or missing field data.
 
-#### Use of pytest-check
+### Use of pytest-check
 Ideally, we wouldn't be using `pytest-check` to couple with our assertion statements as part of our checks. Reason being negative test cases are just different permutations of each other, so if one fails, there is no need to run other permutations.
 
 However, for the purposes of this assignment, I've coupled some assertion statements with `check` so that the entire set of negative test data can be ran.
 
-### Future Work
+## Future Work
 Ideally, test cases derived from various techinques (black-box, white-box, etc) could be included for wider and practical coverage but this will entail further clarification on the intention and assumptions made on the web page. Nonetheless, the following suggested test cases could be included for comprehensiveness:
 * User may repeatedly populates and clears the input field. We can check that the latest field value is indeed the most recent input.
 * Date field values can be tested for equality if the user decides to input the field by clicking the calendar.
