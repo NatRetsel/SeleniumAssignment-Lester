@@ -34,6 +34,8 @@ Create a local Python version environment in the workspace (If you already know 
 * You can choose to select the `requirements.txt` to install the dependencies used in this project. If you chose this you can skip the installing dependencies step below. Otherwise click OK.
 <img src="SeleniumPytestAssignment - Lester/misc/vscodedependencies.png">
 
+* If there is a popup at the bottom right corner asking if you would like to select / activate the virtual environment for the current workspace / newly created environment, select yes.
+
 If you are interested, you may check this [link](https://realpython.com/python-virtual-environments-a-primer/) on why we should use Python virtual environments for every project.
 
 Be sure that the Python interpreter for the environment is selected for the project (check bottom right of VScode):
